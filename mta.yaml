@@ -1,0 +1,21 @@
+ID: PoCApp
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: HDBModule
+   type: hdb
+   path: HDBModule
+   requires:
+    - name: hdi_HDBModule
+
+resources:
+ - name: hdi_HDBModule
+   parameters:
+      config:
+        schema: CGP
+        makeUniqueName: false
+        database_id: ae5f6a02-da1f-4e8c-afd4-db30a66fbe04
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container

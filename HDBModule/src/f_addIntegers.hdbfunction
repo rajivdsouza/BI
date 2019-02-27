@@ -1,0 +1,10 @@
+FUNCTION "PoCApp.HDBModule::f_addIntegers"(x INT , y INT )
+       RETURNS z INT 
+       LANGUAGE SQLSCRIPT 
+       SQL SECURITY INVOKER AS 
+BEGIN 
+    /*****************************
+        Write your function logic
+    ****************************/
+    z =  x+y;
+END;

@@ -1,0 +1,15 @@
+namespace PoCApp.HDBModule;
+
+/*@@layout{"layoutInfo":{"x":-580,"y":-171.5}}*/
+context catalog {
+
+    /*@@layout{"layoutInfo":{"x":-471,"y":-119.5}}*/
+    entity product {
+        key id           : Integer;
+            name         : String(20);
+            supplierName : String(20);
+            category     : String(10);
+            unitPrice    : Integer;
+            unitsInStock : Integer;
+    };
+};

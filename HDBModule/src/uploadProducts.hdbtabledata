@@ -1,0 +1,18 @@
+{
+    "format_version": 1,
+    "imports": [
+        {
+            "target_table": "PoCApp.HDBModule::catalog.product",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "PoCApp.HDBModule::sampledata.csv",
+                "has_header": true
+            },
+            "import_settings": {
+                "import_columns": [
+                    "id","name","supplierName","category","unitPrice","unitsInStock"
+                ]
+            }
+        }
+    ]
+} 

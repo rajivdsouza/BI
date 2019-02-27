@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="PoCApp.HDBModule::products" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="products"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="PoCApp.HDBModule::catalog.product">
+    <resourceUri>PoCApp.HDBModule::catalog.product</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="id">
+        <descriptions defaultDescription="id"/>
+      </viewAttribute>
+      <viewAttribute id="name">
+        <descriptions defaultDescription="name"/>
+      </viewAttribute>
+      <viewAttribute id="supplierName">
+        <descriptions defaultDescription="supplierName"/>
+      </viewAttribute>
+      <viewAttribute id="category">
+        <descriptions defaultDescription="category"/>
+      </viewAttribute>
+      <viewAttribute id="unitPrice">
+        <descriptions defaultDescription="unitPrice"/>
+      </viewAttribute>
+      <viewAttribute id="unitsInStock">
+        <descriptions defaultDescription="unitsInStock"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="PoCApp.HDBModule::catalog.product">
+      <mapping xsi:type="Calculation:AttributeMapping" target="id" source="id"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="name" source="name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="supplierName" source="supplierName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="category" source="category"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="unitPrice" source="unitPrice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="unitsInStock" source="unitsInStock"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="id" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="id"/>
+      <keyMapping columnObjectName="Projection_1" columnName="id"/>
+    </attribute>
+    <attribute id="name" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="name"/>
+      <keyMapping columnObjectName="Projection_1" columnName="name"/>
+    </attribute>
+    <attribute id="supplierName" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="supplierName"/>
+      <keyMapping columnObjectName="Projection_1" columnName="supplierName"/>
+    </attribute>
+    <attribute id="category" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="category"/>
+      <keyMapping columnObjectName="Projection_1" columnName="category"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="unitPrice" order="5" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="unitPrice"/>
+      <measureMapping columnObjectName="Projection_1" columnName="unitPrice"/>
+    </measure>
+    <measure id="unitsInStock" order="6" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="unitsInStock"/>
+      <measureMapping columnObjectName="Projection_1" columnName="unitsInStock"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="86" y="201"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
